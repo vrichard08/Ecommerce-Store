@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model Product
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewBag.Title = "Product Details";
+}
+
+<h1>@Model.Name</h1>
+
+<div class="parent-container d-flex">
+
+    <div class="container">
+        <div class="content-container">
+            <img class="mb-4" height="300" src="@Url.Action("GetImage", "Home", new { id = Model.Id })" /> 
+        </div>
+    </div> 
+    <div class="container">
+        <div class="content-container">
+            <p class="text-light">
+                <strong>Description:</strong> @Model.Description <br />
+                <strong>Price:</strong> @Model.Price <br />
+                <strong>Quantity:</strong> @Model.StockQuantity <br />
+                <strong>Category:</strong> @Model.Category.Name
+            </p>
+            <form method="post" asp-controller="Home" asp-action="AddToCart">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <button type="submit" class="btn btn-dark bg-dark  mb-2 ">Add to Cart</button>
+            </form>
+            @if (SignInManager.IsSignedIn(User) && (await UserManager.IsInRoleAsync(await UserManager.GetUserAsync(User), "Admin")))
+            { <form method="post" asp-controller="Home" asp-action="Delete">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button type="submit" class="btn btn-danger bg-danger mb-2 ">Delete Item</button>
+            </form>
+            <form method="post" asp-controller="Home" asp-action="Update">
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <button type="submit" class="btn btn-primary bg-primary">Update Item</button>
+            </form>}
+            
+        </div>
+    </div>
+</div>

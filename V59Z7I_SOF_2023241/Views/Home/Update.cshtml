@@ -1,0 +1,24 @@
+﻿@model Product
+
+<div class="content-container text-light">
+    <h2>Update Product</h2>
+
+    <form class="text-light w-50" action="UpdateItem" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column">
+
+        @Html.HiddenFor(t => t.Id)
+
+        @Html.LabelFor(t => t.Price)
+        @Html.EditorFor(t => t.Price)
+        @Html.ValidationMessageFor(t => t.Price)
+
+        @Html.LabelFor(t => t.StockQuantity)
+        @Html.EditorFor(t => t.StockQuantity)
+        @Html.ValidationMessageFor(t => t.StockQuantity)
+
+        <input class="bg-dark text-light mt-3" type="submit" value="Update" />
+
+    </form>
+</div>
+
+
+

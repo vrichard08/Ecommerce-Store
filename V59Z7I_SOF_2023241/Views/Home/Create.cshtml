@@ -1,0 +1,34 @@
+﻿@model Product
+
+<h1>Create your Hero</h1>
+<div class="content-container">
+    <form class="text-light w-50" action="create" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column">
+        @Html.ValidationSummary()
+        <label>Name</label>
+        <input type="text" name="Name" value="@Model?.Name"  required/>
+
+        <label>Description</label>
+        <input type="text" name="Description" value="@Model?.Description" required />
+
+        <label>Price</label>
+        <input type="number" name="Price" value="@Model?.Price" required min="1" max="999999" />
+
+        <label>StockQuantity</label>
+        <input type="number" name="StockQuantity" value="@Model?.StockQuantity" required min="1" max="9999" />
+
+        @Html.LabelFor(t => t.CategoryId)
+        @Html.DropDownListFor(t => t.CategoryId, (SelectList)ViewBag.CategoryId, "Select a Category", new { @class = "form-control" })
+        @Html.ValidationMessageFor(t => t.CategoryId)
+        
+
+
+        <label>Picture</label>
+        <input type="file" name="picturedata" />
+        <br />
+        <input class="bg-dark text-light" type="submit" value="Create" />
+
+    </form>
+</div>
+
+
+<link rel="stylesheet" type="text/css" href="~/css/site.css">
