@@ -46,6 +46,7 @@ namespace V59Z7I_SOF_2023241.Controllers
             return RedirectToAction("Index", "Home");
         }
         [Authorize]
+        [HttpGet]
         public IActionResult ViewCart()
         {
             var cart = webstoreService.ViewCart(this.User);

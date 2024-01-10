@@ -67,7 +67,7 @@ namespace V59Z7I_SOF_2023241.Services
         {
             var product = productRepo.ReadAll().Where(x => x.Id == productId).FirstOrDefault();
             var cart = GetOrCreateCart(principal).Result;
-            var existingCartItem = cart.CartItems.FirstOrDefault(item => item.Product.Id == productId);
+            var existingCartItem = cart.CartItems.FirstOrDefault(item => item.Product?.Id == productId);
             if (existingCartItem != null)
             {
                 existingCartItem.Quantity++;

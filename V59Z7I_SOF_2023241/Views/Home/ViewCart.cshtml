@@ -29,10 +29,16 @@
             @foreach (var item in Model.CartItems)
             {
                 <tr >
-                    <td ><img height="150" src="@Url.Action("GetImage", "Home", new { id = item.Product.Id })" /></td>
-                    <td >@item.Product.Name</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.Product.Price</td>
+                    @if (item.Product != null)
+                    {
+                        <td >
+                            <img height="150" src="@Url.Action("GetImage", "Home", new { id = item.Product.Id })" /> 
+                        </td>
+                        <td >@item.Product.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Product.Price</td> 
+                     }
+                        
                     <td>
                             <button onclick="location.href='@Url.Action("DeleteItemFromCart", "Home", new { id = item.Id })'">
                             <i class="bi bi-trash3-fill"></i>
