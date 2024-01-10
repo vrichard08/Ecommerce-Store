@@ -125,7 +125,19 @@ namespace V59Z7I_SOF_2023241.Services
             return categoryRepo.ReadAll().ToList();
         }
 
-
+        public async Task DelegateAdmin(ClaimsPrincipal principal)
+        {
+            var user = await _userManager.GetUserAsync(principal);
+            var role = new IdentityRole()
+            {
+                Name = "Admin"
+            };
+            if (! await _roleManager.RoleExistsAsync("Admin"))
+            {
+                await _roleManager.CreateAsync(role);
+            }
+            await _userManager.AddToRoleAsync(user, "Admin");
+        }
         public void CreateProductOnUI(Product product, IFormFile picturedata)
         {
             using (var stream = picturedata.OpenReadStream())

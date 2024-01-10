@@ -156,7 +156,7 @@ namespace V59Z7I_SOF_2023241.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> DelegateAdmin()
         {
             var user = await webstoreService.GetCurrentUser(this.User);
@@ -181,7 +181,7 @@ namespace V59Z7I_SOF_2023241.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GrantAdmin(string uid)
         {
             await webstoreService.GrantAdmin(uid);
