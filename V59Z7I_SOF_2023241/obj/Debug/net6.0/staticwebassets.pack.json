@@ -17,6 +17,26 @@
       "PackagePath": "staticwebassets\\images\\background.jpg"
     },
     {
+      "Id": "C:\\Users\\repri\\Desktop\\szerveroldali prog\\V59Z7I_SOF_2023241\\wwwroot\\images\\great_gatsby.jpg",
+      "PackagePath": "staticwebassets\\images\\great_gatsby.jpg"
+    },
+    {
+      "Id": "C:\\Users\\repri\\Desktop\\szerveroldali prog\\V59Z7I_SOF_2023241\\wwwroot\\images\\iphone.jpg",
+      "PackagePath": "staticwebassets\\images\\iphone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\repri\\Desktop\\szerveroldali prog\\V59Z7I_SOF_2023241\\wwwroot\\images\\programming_basics.jpg",
+      "PackagePath": "staticwebassets\\images\\programming_basics.jpg"
+    },
+    {
+      "Id": "C:\\Users\\repri\\Desktop\\szerveroldali prog\\V59Z7I_SOF_2023241\\wwwroot\\images\\shoes.jpg",
+      "PackagePath": "staticwebassets\\images\\shoes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\repri\\Desktop\\szerveroldali prog\\V59Z7I_SOF_2023241\\wwwroot\\images\\sweater.jpg",
+      "PackagePath": "staticwebassets\\images\\sweater.jpg"
+    },
+    {
       "Id": "C:\\Users\\repri\\Desktop\\szerveroldali prog\\V59Z7I_SOF_2023241\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

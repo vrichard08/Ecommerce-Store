@@ -31,7 +31,9 @@ namespace V59Z7I_SOF_2023241
             builder.Services.AddTransient<IRepository<CartItem>, CartItemRepository>();
             builder.Services.AddTransient<IEmailSender, EmailSender>();
             builder.Services.AddScoped<WebstoreService>();
-            builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer("Data Source=localhost;Initial Catalog=MSSQLSERVER;Integrated Security=True;MultipleActiveResultSets=True"));
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+            builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer("Data Source=localhost;Initial Catalog=MyWebstore;Integrated Security=True;MultipleActiveResultSets=True"));
 
 
             builder.Services.AddAuthentication().AddFacebook(opt =>
