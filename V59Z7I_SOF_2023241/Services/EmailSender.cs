@@ -14,7 +14,7 @@ namespace V59Z7I_SOF_2023241.Services
                 Port = 587,
                 UseDefaultCredentials = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                Credentials = new NetworkCredential("richardvarhelyi@stud.uni-obuda.hu", "Ricskecomb8"),
+                Credentials = new NetworkCredential("richardvarhelyi@stud.uni-obuda.hu", "********"),
                 TargetName = "STARTTLS/smtp.office365.com",
                 EnableSsl = true
 
